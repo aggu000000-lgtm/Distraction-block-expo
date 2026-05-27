@@ -57,7 +57,7 @@ Phase 3: PLATFORM    Days 61–100   [ ] Planned
 - **Expo Router** v4 (file-based navigation)
 - **TypeScript** (strict)
 - **Zustand** (state)
-- **MMKV** (persistence)
+- **JSI-SQLite** (persistence)
 - **Reanimated 3 + Skia** (animations)
 - **Supabase** (cloud sync, Phase 3)
 
