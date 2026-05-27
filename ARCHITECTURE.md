@@ -24,7 +24,7 @@ No clever abstractions for their own sake. No over-engineering. No premature opt
 | Layer | Choice | Rationale |
 |---|---|---|
 | Client State | Zustand | 8KB, no boilerplate, works outside React |
-| Persistence | MMKV via expo-community | 10x faster than AsyncStorage; synchronous reads |
+| Persistence | JSI-SQLite via expo-sqlite/kv | Native SDK 52 support; synchronous reads without NOBRIDGE errors |
 | Remote Sync | Supabase (Phase 3+) | Postgres + Auth + Realtime; open source |
 | Caching | TanStack Query (Phase 3+) | Server state separate from client state |
 
@@ -127,7 +127,7 @@ focusguard/
 │   ├── lib/                      # Pure utility functions
 │   │   ├── time.ts               # Date/duration helpers
 │   │   ├── format.ts             # Number/string formatters
-│   │   └── storage.ts            # MMKV wrapper with typed keys
+│   │   └── storage.ts            # JSI-SQLite wrapper with typed keys
 │   │
 │   └── types/                    # Shared TypeScript types
 │       ├── domain.ts             # BlockedApp, Session, Rule, etc.
@@ -253,7 +253,7 @@ The engine runs decisions synchronously in < 1ms. No async, no network, no excus
 ## State Flow
 
 ```
-MMKV (persisted) → Zustand store → React hooks → Components
+JSI-SQLite (persisted) → Zustand store → React hooks → Components
                                        ↑
                               Pure core logic
                          (engine.ts, timer.ts, etc.)

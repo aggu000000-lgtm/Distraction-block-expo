@@ -157,7 +157,7 @@ These are locked. Do not debate them. If you think one is wrong, open a GitHub D
 |---|---|
 | Local-first data | User trust; works offline; no data breach risk |
 | Zustand over Redux | Simpler; less boilerplate; equally capable |
-| MMKV over AsyncStorage | 10x speed; synchronous; critical for engine |
+| JSI-SQLite over AsyncStorage | Native SDK 52 support; synchronous; critical for engine; zero NOBRIDGE errors |
 | `src/core/` is pure TS | Testable without React; portable; clear ownership |
 | No analytics SDK | User privacy; no third-party data leakage |
 | Expo Managed Workflow | No native code maintenance; OTA updates |

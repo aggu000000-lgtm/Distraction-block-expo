@@ -27,7 +27,7 @@ The goal of Phase 1 is a working app that a real user can install, configure in 
 - Set up ESLint + Prettier with strict rules
 - Configure absolute imports (`@/`)
 - Set up folder structure exactly as per ARCHITECTURE.md
-- Initialize Zustand + MMKV
+- Initialize Zustand + JSI-SQLite
 - Install all Phase 1 dependencies
 - First commit: "init: project foundation"
 
@@ -41,7 +41,7 @@ The goal of Phase 1 is a working app that a real user can install, configure in 
 
 **Day 3** — Data layer
 - Define all domain types in `src/types/domain.ts`
-- Implement MMKV storage wrapper (`src/lib/storage.ts`)
+- Implement JSI-SQLite storage wrapper (`src/lib/storage.ts`)
 - Implement blocking store (`src/store/blocking.store.ts`)
 - Seed default app list (40 apps across categories)
 - Write unit tests for store operations (add, remove, toggle)
@@ -477,7 +477,7 @@ Phase 3 makes the app production-ready: cloud sync, app store release, and the f
 **Day 63** — Data sync architecture
 - Sync strategy: local-first, optimistic updates, background sync
 - Conflict resolution: last-write-wins with device timestamps
-- Sync queue: stores pending writes in MMKV, flushes when online
+- Sync queue: stores pending writes in JSI-SQLite, flushes when online
 - Never block UI on sync
 
 **Day 64-65** — Sync implementation
